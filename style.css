@@ -228,7 +228,7 @@ nav ul {
 .gradient-1 {
   width: 100%;
   position: absolute;
-  top: 1;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -258,89 +258,4 @@ nav ul {
   align-items: start;
 }
 
-/* CONTACT PAGE ONLY STYLES */
-.page-hero {
-  padding: 84px 0 24px;
-}
-.page-hero h1 {
-  text-transform: none;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 32px;
-  align-items: start;
-}
-
-.contact-card h3 {
-  margin-top: 24px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  background-color: #fce8c8;
-  padding: 24px;
-}
-.form-grid label {
-  font-weight: 700;
-  color: #873a47;
-  font-size: 14px;
-}
-.form-grid input,
-.form-grid textarea {
-  width: 100%;
-  border: none;
-  padding: 10px 12px;
-  background: #fff4e2;
-  font-family: inherit;
-  font-size: 16px;
-}
-.form-grid textarea {
-  grid-column: 1 / -1;
-  min-height: 160px;
-  resize: vertical;
-}
-.form-actions {
-  margin-top: 16px;
-}
-.map-img-wrap {
-  min-height: 520px;
-}
-
-@media screen and (max-width: 480px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-  .page-hero {
-    padding-top: 48px;
-  }
-}
-@media screen and (max-width: 768px) and (min-width: 481px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  .form-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media screen and (max-width: 1279px) and (min-width: 769px) {
-  .contact-grid {
-    grid-template-columns: 1fr 1.5fr;
-  }
-}
-@media screen and (max-width: 1440px) and (min-width: 1280px) {
-  .contact-grid {
-    grid-template-columns: 1fr 2fr;
-  }
-}
-@media screen and (min-width: 1441px) {
-  .contact-grid {
-    grid-template-columns: 1fr 2fr;
-  }
-}
+/* ---- CONTACT PAGE ---- */
