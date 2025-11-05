@@ -259,3 +259,102 @@ nav ul {
 }
 
 /* ---- CONTACT PAGE ---- */
+
+.page-hero {
+  padding: 48px 0; /* reduced space above/below */
+  background: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 78px; /* matches other pages’ h1 size */
+  line-height: 100%;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #873a47;
+  text-transform: none;
+}
+
+.map-img-wrap {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 2 fixed-width columns like the Figma, left-aligned */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    minmax(260px, 360px)
+  ); /* 👈 fixed input widths */
+  column-gap: 24px;
+  row-gap: 16px;
+  justify-content: start; /* keep columns snug on the left */
+  background: transparent; /* same as page background */
+  padding: 0; /* remove panel padding */
+}
+
+.form-grid label {
+  font-weight: 700;
+  color: #873a47;
+  font-size: 14px;
+}
+
+.form-grid input,
+.form-grid textarea {
+  width: 100%; /* fills its fixed column */
+  border: none;
+  padding: 10px 12px;
+  background: #fff; /* white fields on cream page */
+  font-family: inherit;
+  font-size: 16px;
+}
+
+/* Message spans both columns (same total width as two inputs + gap) */
+.form-row-full {
+  grid-column: 1 / -1;
+}
+.form-grid textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 420px) minmax(520px, 1fr);
+  column-gap: 64px; /* space between left and right columns */
+  row-gap: 32px;
+  align-items: start;
+}
+
+/* Remove gap between map and testimonials */
+#visit {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.background-maroon.section-padding {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* responsive: stack fields on small screens */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row-full {
+    grid-column: auto;
+  }
+}
