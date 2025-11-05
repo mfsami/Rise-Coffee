@@ -8,7 +8,7 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="layout.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.cleaned.css" />
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -79,19 +79,26 @@
               action="#"
               method="post"
               aria-label="Contact form">
-              <div>
+              <!-- LEFT column -->
+              <div class="form-col-left">
                 <label for="first">First Name</label>
                 <input id="first" name="first" type="text" required />
               </div>
-              <div>
+
+              <!-- RIGHT column -->
+              <div class="form-col-right">
                 <label for="last">Last Name</label>
                 <input id="last" name="last" type="text" required />
               </div>
-              <div>
+
+              <!-- LEFT column (stack under First Name) -->
+              <div class="form-col-left">
                 <label for="email">Email</label>
                 <input id="email" name="email" type="email" required />
               </div>
-              <div>
+
+              <!-- RIGHT column (stack under Last Name) -->
+              <div class="form-col-right">
                 <label for="phone">Phone</label>
                 <input
                   id="phone"
@@ -99,6 +106,8 @@
                   type="tel"
                   placeholder="(xxx) xxx-xxxx" />
               </div>
+
+              <!-- Full-width row -->
               <div class="form-row-full">
                 <label for="message">Message</label>
                 <textarea id="message" name="message" required></textarea>
