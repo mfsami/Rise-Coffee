@@ -232,7 +232,7 @@ nav ul {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
 .gradient-2 {
@@ -276,19 +276,6 @@ nav ul {
   letter-spacing: -2px;
   color: #873a47;
   text-transform: none;
-}
-
-.map-img-wrap {
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  overflow: hidden;
-}
-
-.map-img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* 2 fixed-width columns like the Figma, left-aligned */
@@ -338,15 +325,19 @@ nav ul {
   align-items: start;
 }
 
-/* Remove gap between map and testimonials */
-#visit {
-  margin-bottom: 0;
-  padding-bottom: 0;
+/* Full-width map styling */
+.map-full {
+  width: 100vw; /* full screen width */
+  margin-left: 50%;
+  transform: translateX(-50%); /* centers it despite parent container margins */
+  overflow: hidden;
 }
 
-.background-maroon.section-padding {
-  margin-top: 0;
-  padding-top: 0;
+.map-full-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* responsive: stack fields on small screens */
@@ -356,5 +347,219 @@ nav ul {
   }
   .form-row-full {
     grid-column: auto;
+  }
+}
+
+/* ---- ABOUT PAGE ---- */
+
+/* bands */
+.section-cream {
+  background: var(--cream);
+  padding: 56px 0;
+}
+.section-gold {
+  background: linear-gradient(180deg, #ebc770 0%, #d2a44c 100%);
+  padding: 72px 0;
+}
+
+/* hero title */
+.about-hero {
+  background: var(--cream);
+  padding: 48px 0 24px;
+}
+.about-hero h1 {
+  font-size: 78px;
+  color: #873a47;
+  line-height: 1;
+}
+
+/* lead image: full container width but controlled height like mock */
+.about-lead-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 2; /* landscape */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* story row (text left, arched portrait right) */
+.about-story {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.about-eyebrow {
+  color: #873a47;
+}
+.about-arch-portrait {
+  max-width: 360px; /* keeps image from getting huge */
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 160px 160px 0 0; /* arched top */
+  margin-left: auto;
+}
+
+/* values */
+.about-values-title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #873a47;
+}
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.about-value-icon {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+/* events row (arched landscape left, copy right) */
+.about-events {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+}
+.about-arch-landscape {
+  max-width: 520px;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 160px 160px 0 0;
+}
+
+/* more than a cafe (gold band, circle image right) */
+.about-more {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.about-circle {
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: auto;
+}
+
+/* testimonial spacing on about (center content in maroon) */
+.about-testimonial {
+  padding: 120px 0;
+}
+
+/* make sure images fit like home */
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Center text beside images for About page sections */
+.row.align-center {
+  display: flex;
+  align-items: center; /* vertically centers text with image */
+  gap: 40px; /* optional spacing between text and image */
+}
+
+/* keep text left-aligned and flush with the column */
+.about-page .row.align-center h2,
+.about-page .row.align-center p {
+  margin: 0; /* no auto-centering */
+  text-align: left;
+}
+
+/* widen the body copy like the Figma */
+.about-page .row.align-center p {
+  max-width: 680px; /* adjust to taste (620–700 works well) */
+}
+
+.about-page .row.align-center p {
+  max-width: 600px;
+}
+
+/* ensure balanced image + text spacing */
+.about-page .row.align-center {
+  gap: 48px;
+}
+
+.hero-img-wrap {
+  margin: 24px auto 0;
+  width: 100%;
+  max-width: 1112px;
+  height: 741px;
+  overflow: hidden;
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures cropped, not squished */
+  border-radius: 0;
+  display: block;
+}
+/* Center the entire our values block */
+.about-values {
+  display: flex;
+  justify-content: center; /* centers it horizontally */
+  align-items: center; /* centers it vertically */
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-events button {
+  margin-top: 3rem;
+}
+
+/* about hero icon — same as index */
+.about-hero {
+  position: relative;
+}
+
+.about-hero .rise-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 600px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .row.align-center {
+    flex-direction: column; /* stack on mobile */
+    text-align: center;
+  }
+
+  .row.align-center h2,
+  .row.align-center p {
+    text-align: center;
+    max-width: none;
+  }
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .about-story,
+  .about-events,
+  .about-more {
+    grid-template-columns: 1fr;
+  }
+  .about-arch-portrait,
+  .about-arch-landscape,
+  .about-circle {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+  .about-lead-wrap {
+    border-radius: 8px;
   }
 }
